@@ -1,366 +1,192 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://cdn.rawgit.com/MikeMcl/decimal.js/master/decimal.js"></script>
-     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Legocro/OrangeFish/master/OrangeFish.css">
+<h1 id="h1">
 
-  </head>
-  <body>
-<h1 id="title">
-Orange Fish Clicker
 </h1>
-<table>
-  <td>Fish:</td>
-  <td id="fish">0</td>
-</table>
-<table>
-  <td>Fishermen:</td>
-  <td id="fisherman">0</td>
-  <td style="font-style:oblique;">Cost = </td>
-  <td id="fishercost" style="font-style:oblique;"> </td>
 
-</table>
-<table style="border-spacing: 10px;">
-  <td>
-    <button id="reset01" onclick="fish2()">
-      Add fish
-    </button>
-  </td>
-  <td>
-    <button id="button" onclick="buy()">
-      Buy fishermen
-    </button>
-  </td>
-  <td>
-    <button id="max" onclick="maxx()">
-    Buy Max
-    </button>
-  </td>
-</table>
-<table style="border-spacing: 5px;">
-  <td>
-    <button id="upg" onclick="up()">
-      Upgrade fish production x2
-    </button>
-  </td>
-  <td id="up" style="font-style:oblique;">Cost = 100 fish</td>
-</table>
-<table style="border-spacing: 5px;">
-  <td>
-    <button id="Oran" onClick="run2()">
-      Orange fish upgrade fish production x69
-    </button>
-  </td>
-  <td id="Ora" style="font-style:oblique;">Cost = 1000 fish</td>
-</table>
-<table style="border-spacing: 5px;">
-  <td>
-    <button id="multi2" onclick="up3()">
-      Buy multiplier
-    </button>
-  </td>
-  <td>
-    <button id="max2" onclick="maxx2()">
-    Buy Max
-    </button>
-  </td>
-  <td id="newcost" style="font-style:oblique;">Cost = </td>
-  <td id="multi" style="font-style:oblique;"> </td>
-</table>
-<table id="timing" style="font-style:oblique;">
-  <td id="hours">00:</td>
-  <td id="minutes">00:</td>
-  <td id="seconds">00</td>
-</table>
-<h2 id="Win">
-YOU WON!
-</h2>
-<span>
-<button id="reset" onclick="reset()">
-HARD RESET
+<input id="zone" type="text" placeholder="type it" />
+<button id="button" onclick="hp()">
+  Click to find out
 </button>
-</span>
-
-<div style="div">
-  Made by:Sioist and Kapparina Alpha V2.07
-</div>
-<div id="remove">
-  <button id="nope" onclick="remove()">
-    remove
-  </button>
-</div>
 <script>
-  <h1 id="title">
-Orange Fish Clicker
-</h1>
-<table>
-  <td>Fish:</td>
-  <td id="fish">0</td>
-</table>
-<table>
-  <td>Fishermen:</td>
-  <td id="fisherman">0</td>
-  <td style="font-style:oblique;">Cost = </td>
-  <td id="fishercost" style="font-style:oblique;"> </td>
-
-</table>
-<table style="border-spacing: 10px;">
-  <td>
-    <button id="reset01" onclick="fish2()">
-      Add fish
-    </button>
-  </td>
-  <td>
-    <button id="button" onclick="buy()">
-      Buy fishermen
-    </button>
-  </td>
-  <td>
-    <button id="max" onclick="maxx()">
-    Buy Max
-    </button>
-  </td>
-</table>
-<table style="border-spacing: 5px;">
-  <td>
-    <button id="upg" onclick="up()">
-      Upgrade fish production x2
-    </button>
-  </td>
-  <td id="up" style="font-style:oblique;">Cost = 100 fish</td>
-</table>
-<table style="border-spacing: 5px;">
-  <td>
-    <button id="Oran" onClick="run2()">
-      Orange fish upgrade fish production x69
-    </button>
-  </td>
-  <td id="Ora" style="font-style:oblique;">Cost = 1000 fish</td>
-</table>
-<table style="border-spacing: 5px;">
-  <td>
-    <button id="multi2" onclick="up3()">
-      Buy multiplier
-    </button>
-  </td>
-  <td>
-    <button id="max2" onclick="maxx2()">
-    Buy Max
-    </button>
-  </td>
-  <td id="newcost" style="font-style:oblique;">Cost = </td>
-  <td id="multi" style="font-style:oblique;"> </td>
-</table>
-<table id="timing" style="font-style:oblique;">
-  <td id="hours">00:</td>
-  <td id="minutes">00:</td>
-  <td id="seconds">00</td>
-</table>
-<h2 id="Win">
-YOU WON!
-</h2>
-<span>
-<button id="reset" onclick="reset()">
-HARD RESET
-</button>
-</span>
-
-<div style="div">
-  Made by:Sioist and Kapparina Alpha V2.07
-</div>
-<div id="remove">
-  <button id="nope" onclick="remove()">
-    remove
-  </button>
-</div>
-<script>
-document.getElementById("reset01")
-    .addEventListener("keypress", function(event) {
+  document.getElementById("dps")
+    .addEventListener("keyup", function(event) {
       event.preventDefault();
       if (event.keyCode == 13) {
-        document.getElementById("nope").click();
+        document.getElementById("button").click();
       }
     });
-  document.getElementById("button")
-    .addEventListener("keypress", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("nope").click();
-      }
-    });
-  document.getElementById("multi2")
-    .addEventListener("keypress", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("nope").click();
-      }
-    });
-  var fish =new Decimal(0);
-  var fisherman =new Decimal( 0);
-  var cost =new Decimal(10);
-  var upgrade = new Decimal(1);
-  var Orange =new Decimal(1);
-  var multx = new Decimal(1);
-  var cost2 = new Decimal(1000);
-  var seconds = new Decimal(0);
-  var hours =new Decimal(0);
-  var minutes =new Decimal(0);
-  var a = new Decimal(0);
-  var delay = new Decimal(10);
-  var now, before = new Date();
- /* var thing=[];
-  function getBaseLog(x, y) {
-  return Math.log(y) / Math.log(x);
-  }*/
-  function maxx(){
-  while (fish.greaterThan(cost)){
-  fish=fish.minus(cost)
-  fisherman=fisherman.plus(1)
-  cost=cost.times(1.3)
-  }
-  }
-  function maxx2(){
-  while (fish.greaterThan(cost2)){
-  fish=fish.minus(cost2)
-  multx=multx.plus(1.05)
-  cost2=cost2.times(1000)
-  }
-  }
-  function remove() {
-    fish =fish.times(0);
-  }
 
-  function fish2() {
-    fish=fish.plus(1);
-
-  }
-
-  function buy() {
-    fish =fish.minus(cost);
-    fisherman=fisherman.plus(1);
-    cost =cost.times(1.3);
-  }
-
-  function up() {
-    fish =fish.minus(100);
-    upgrade =upgrade.times(2);
-  }
-
-  function run2() {
-    fish =fish.minus(1000);
-    Orange =Orange.times(69);
-  }
-
-  function up3() {
-    fish =fish.minus(cost2);
-    multx =multx.plus(1.05);
-    cost2 =cost2.times(1000);
-  }
-
-  function reset() {
-    location.reload();
-  }
-/*  var timing01 = setInterval(function() {
-
-    now = new Date();
-    var elapsedTime = (now.getTime() - before.getTime());
-    if (elapsedTime > delay)
-      seconds = seconds + 1 * Math.floor(elapsedTime / delay);
-    else
-      seconds = seconds + 1;
-    before = new Date();
-  }, delay);
-   
-/*  var timing001 = setInterval(function() {
- var big =new Decimal(fisherman.times(upgrade).times(Orange).times(100).pow(multx));
-
-    now = new Date();
-    var elapsedTime = (now.getTime() - before.getTime());
-    if (elapsedTime > delay)
-      fish=fish+big*Math.floor(elapsedTime / delay);
-    else
-      fish=fish+big;
-    before = new Date();
-  }, delay)*/
-
-  var timer = window.setInterval(function() {
-  seconds=seconds.plus(1);
-    if (minutes.greaterThan(59)) {
-      hours=hours.plus(1)
-      minutes = minutes.times(0)
-    } else if (seconds.greaterThan(99)) {
-      minutes=minutes.plus(1)
-      seconds = seconds.times(0)
-    }
- var big =new Decimal((fisherman.times(upgrade).times(Orange).times(0.01)).pow(multx));
-fish=fish.plus(big);
-
-
-
-    
-    document.getElementById("hours").innerHTML = hours + ":";
-    document.getElementById("minutes").innerHTML = minutes + ":";
-    document.getElementById("seconds").innerHTML=seconds.toPrecision(4);
-    document.getElementById("fish").innerHTML = fish.toPrecision(4);
-    document.getElementById("fisherman").innerHTML = fisherman;
-    document.getElementById("fishercost").innerHTML = (cost.floor()).toPrecision(4);
-    document.getElementById("multi").innerHTML = cost2.toPrecision(4) + " fish"
-    if (fish.lessThan(cost)) {
-      document.getElementById("button").disabled = true;
-    } else {
-      document.getElementById("button").disabled = false;
-    }
-    if (upgrade.equals(1)) {
-      if (fish.lessThan(100)) {
-        document.getElementById("up").style.visibility = "hidden"
-        document.getElementById("upg").disabled = true;
+  function hp() {
+    var dps = document.getElementById("zone").value;
+    var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
+    var scale3 = [];
+    var scale2 = [];
+    var zone2 = [];
+    var zone = 0;
+    if (zone <= 140) {
+      if (zone % 5 === 0) {
+        var dps1 = 10 * (zone - 1 + Math.pow(1.55, (zone - 1))) * 10
       } else {
-        document.getElementById("up").style.visibility = "visible"
-        document.getElementById("upg").disabled = false;
-
-
+        var dps1 = 10 * (zone - 1 + Math.pow(1.55, zone - 1))
+      }
+    } else if (zone <= 500) {
+      if (zone % 5 === 0) {
+        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140)) * 10
+      } else {
+        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140))
       }
     } else {
-      document.getElementById("up").style.visibility = "hidden"
-      document.getElementById("upg").disabled = true;
+      var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
+      var scale3 = []
+      var scale2 = []
+      var zone2 = []
+      var zone4 = Math.floor(zone / 500) - 1
+      var scale4 = []
+      for (i = 0; i < zone4; i++) {
+        var scale1 = i * 0.005 + 1.15
+        var zone1 = 500
+        scale2.push(scale1)
+        zone2.push(zone1)
+
+      }
+      for (j = 0; j < zone4; j++) {
+        scale3.push(Math.pow(scale2[j], zone2[j]));
+      }
+      /*for (m=0;m<zone4;m++)
+      {
+        scale4.push(scale3[m]*scalea[m]);
+          
+      }*/
+      var hp = scale
+      for (var i = 0; i < scale3.length; i++) {
+        hp *= scale3[i]
+      }
+      var hpR = hp * Math.pow(1.15 + 0.005 * scale3.length, zone - (scale3.length + 1) * 500)
     }
-    if (Orange.equals(1)) {
-      if (fish.lessThan(1000)) {
-        document.getElementById("Ora").style.visibility = "hidden"
-				document.getElementById("Oran").disabled = true;  
-        } else {
-        document.getElementById("Ora").style.visibility = "visible"
-        document.getElementById("Oran").disabled = false;
+    var zonex = hpR.toPrecision(4);
+    if(zonex>dps){
+    for (var i = 0; i > 5000; i++) {
+    var zonel = zone + 1
+      }
+    }
+  }
+  /*if (kumaEffect === 0) {
+      var seconds = (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) * 1.0 / 30;
+    } else {
+      var seconds = (kumaEffect - Math.floor(kumaEffect)) * (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.ceil(kumaEffect)) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.floor(kumaEffect)) + 1 * 1)) * (-kumaEffect + Math.floor(kumaEffect) + 1.0) / 30;
+    }
+    if (seconds >= 3600) {
+      var hours = Math.floor(seconds / 3600)
+      var minutes = Math.floor((seconds - hours * 3600) / 60)
+      var seconds = Math.floor(seconds - hours * 3600 - minutes * 60)
+    } else if (seconds >= 60) {
+      var hours = 0
+      var minutes = Math.floor(seconds / 60)
+      var seconds = Math.floor(seconds - minutes * 60)
+    } else {
+      var hours = 0
+      var minutes = 0
+      seconds = Math.floor(seconds)
+    }*/
+
+
+  document.getElementById("h1").innerHTML = zonel
+  }
+
+</script>
+<h1 id="h1">
+
+</h1>
+
+<input id="zone" type="text" placeholder="type it" />
+<button id="button" onclick="hp()">
+  Click to find out
+</button>
+<script>
+  document.getElementById("dps")
+    .addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode == 13) {
+        document.getElementById("button").click();
+      }
+    });
+
+  function hp() {
+    var dps = document.getElementById("zone").value;
+    var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
+    var scale3 = [];
+    var scale2 = [];
+    var zone2 = [];
+    var zone = 0;
+    if (zone <= 140) {
+      if (zone % 5 === 0) {
+        var dps1 = 10 * (zone - 1 + Math.pow(1.55, (zone - 1))) * 10
+      } else {
+        var dps1 = 10 * (zone - 1 + Math.pow(1.55, zone - 1))
+      }
+    } else if (zone <= 500) {
+      if (zone % 5 === 0) {
+        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140)) * 10
+      } else {
+        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140))
       }
     } else {
-      document.getElementById("Ora").style.visibility = "hidden"
-      document.getElementById("Oran").disabled = true;
+      var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
+      var scale3 = []
+      var scale2 = []
+      var zone2 = []
+      var zone4 = Math.floor(zone / 500) - 1
+      var scale4 = []
+      for (i = 0; i < zone4; i++) {
+        var scale1 = i * 0.005 + 1.15
+        var zone1 = 500
+        scale2.push(scale1)
+        zone2.push(zone1)
 
+      }
+      for (j = 0; j < zone4; j++) {
+        scale3.push(Math.pow(scale2[j], zone2[j]));
+      }
+      /*for (m=0;m<zone4;m++)
+      {
+        scale4.push(scale3[m]*scalea[m]);
+          
+      }*/
+      var hp = scale
+      for (var i = 0; i < scale3.length; i++) {
+        hp *= scale3[i]
+      }
+      var hpR = hp * Math.pow(1.15 + 0.005 * scale3.length, zone - (scale3.length + 1) * 500)
     }
-    if (fish.lessThan(cost2)) {
-      document.getElementById("multi2").disabled = true;
+    var zonex = hpR.toPrecision(4);
+    if(zonex>dps){
+    for (var i = 0; i > 5000; i++) {
+    var zonel = zone + 1
+      }
+    }
+  }
+  /*if (kumaEffect === 0) {
+      var seconds = (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) * 1.0 / 30;
     } else {
-      document.getElementById("multi2").disabled = false;
+      var seconds = (kumaEffect - Math.floor(kumaEffect)) * (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.ceil(kumaEffect)) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.floor(kumaEffect)) + 1 * 1)) * (-kumaEffect + Math.floor(kumaEffect) + 1.0) / 30;
     }
-
-    if (fish.greaterThan(1e308)) {
-      document.getElementById("Win").style.visibility = "visible"
-     /* clearInterval(timer)
-      clearInterval(timing01)
-      clearInterval(timing001)*/
-
-
+    if (seconds >= 3600) {
+      var hours = Math.floor(seconds / 3600)
+      var minutes = Math.floor((seconds - hours * 3600) / 60)
+      var seconds = Math.floor(seconds - hours * 3600 - minutes * 60)
+    } else if (seconds >= 60) {
+      var hours = 0
+      var minutes = Math.floor(seconds / 60)
+      var seconds = Math.floor(seconds - minutes * 60)
     } else {
-      document.getElementById("Win").style.visibility = "hidden"
-    }
+      var hours = 0
+      var minutes = 0
+      seconds = Math.floor(seconds)
+    }*/
 
 
+  document.getElementById("h1").innerHTML = zonel
+  }
 
-
-
-
-  }, 10)
 </script>
-</script>
-</body>
-</hmtl>
