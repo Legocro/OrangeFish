@@ -1,0 +1,83 @@
+<h1 id="title">
+Orange Fish Clicker
+</h1>
+<table>
+  <td>Fish:</td>
+  <td id="fish">0</td>
+</table>
+<table>
+  <td>Fishermen:</td>
+  <td id="fisherman">0</td>
+  <td style="font-style:oblique;">Cost = </td>
+  <td id="fishercost" style="font-style:oblique;"> </td>
+
+</table>
+<table style="border-spacing: 10px;">
+  <td>
+    <button id="reset01" onclick="fish2()">
+      Add fish
+    </button>
+  </td>
+  <td>
+    <button id="button" onclick="buy()">
+      Buy fishermen
+    </button>
+  </td>
+  <td>
+    <button id="max" onclick="maxx()">
+    Buy Max
+    </button>
+  </td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="upg" onclick="up()">
+      Upgrade fish production x2
+    </button>
+  </td>
+  <td id="up" style="font-style:oblique;">Cost = 100 fish</td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="Oran" onClick="run2()">
+      Orange fish upgrade fish production x69
+    </button>
+  </td>
+  <td id="Ora" style="font-style:oblique;">Cost = 1000 fish</td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="multi2" onclick="up3()">
+      Buy multiplier
+    </button>
+  </td>
+  <td>
+    <button id="max2" onclick="maxx2()">
+    Buy Max
+    </button>
+  </td>
+  <td id="newcost" style="font-style:oblique;">Cost = </td>
+  <td id="multi" style="font-style:oblique;"> </td>
+</table>
+<table id="timing" style="font-style:oblique;">
+  <td id="hours">00:</td>
+  <td id="minutes">00:</td>
+  <td id="seconds">00</td>
+</table>
+<h2 id="Win">
+YOU WON!
+</h2>
+<span>
+<button id="reset" onclick="reset()">
+HARD RESET
+</button>
+</span>
+
+<div style="div">
+  Made by:Sioist and Kapparina Alpha V2.07
+</div>
+<div id="remove">
+  <button id="nope" onclick="remove()">
+    remove
+  </button>
+</div>
