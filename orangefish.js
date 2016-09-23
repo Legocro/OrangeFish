@@ -132,7 +132,7 @@ document.getElementById("reset01")
     document.getElementById("fisherman").innerHTML = fisherman;
     document.getElementById("fishercost").innerHTML = (cost.floor()).toPrecision(4);
     document.getElementById("multi").innerHTML = cost2.toPrecision(4) + " fish"
-    if (fish.lessThan(cost)) {
+    /*if (fish.lessThan(cost)) {
       document.getElementById("button").disabled = true;
     } else {
       document.getElementById("button").disabled = false;
@@ -179,7 +179,7 @@ document.getElementById("reset01")
 
     } else {
       document.getElementById("Win").style.visibility = "hidden"
-    }
+    }*/
 
 
 
