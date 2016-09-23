@@ -1,0 +1,59 @@
+div {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  font-size: normal;
+  position: absolute;
+  bottom: -0px;
+  vertical-align: bottom;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  position: relative;
+  bottom: -30px;
+  right: -50px;
+  font-size: xx-large;
+}
+
+#title {
+  background-color: #fcbb0a;
+  border: solid #310954;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px 5px 5px 5px;
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+}
+
+table {
+  border: 1px solid #0a0a0a;
+  font-size: large;
+  padding: 2px;
+}
+
+#reset {
+  font-size: x-small;
+  font-style: monospace;
+  position: absolute;
+  left: 380px;
+}
+
+#remove {
+  visibility: hidden;
+}
+
+div.inline {
+  float: left;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+#timing {
+  border-spacing: 0px;
+}
+
+
+    fishermen=fisherman.sqrt();
+ var bigger=new Decimal(big.sqrt()*fishermen).pow(3);
