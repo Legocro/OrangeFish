@@ -1,3 +1,4 @@
+src="https://rawgit.com/MikeMcl/decimal.js/master/decimal.js"
 document.getElementById("reset01")
     .addEventListener("keypress", function(event) {
       event.preventDefault();
