@@ -1,192 +1,178 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html>
-<h1 id="h1">
+  <head>
+    <script src=""
+    <script src="https://rawgit.com/MikeMcl/decimal.js/master/decimal.js"></script>
+     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Legocro/OrangeFish/master/OrangeFish.css">
 
+  </head>
+  <body>
+<h1 id="title">
+Orange Fish Clicker
 </h1>
+<table>
+  <td>Fish:</td>
+  <td id="fish">0</td>
+</table>
+<table>
+  <td>Fishermen:</td>
+  <td id="fisherman">0</td>
+  <td style="font-style:oblique;">Cost = </td>
+  <td id="fishercost" style="font-style:oblique;"> </td>
 
-<input id="zone" type="text" placeholder="type it" />
-<button id="button" onclick="hp()">
-  Click to find out
+</table>
+<table style="border-spacing: 10px;">
+  <td>
+    <button id="reset01" onclick="fish2()">
+      Add fish
+    </button>
+  </td>
+  <td>
+    <button id="button" onclick="buy()">
+      Buy fishermen
+    </button>
+  </td>
+  <td>
+    <button id="max" onclick="maxx()">
+    Buy Max
+    </button>
+  </td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="upg" onclick="up()">
+      Upgrade fish production x2
+    </button>
+  </td>
+  <td id="up" style="font-style:oblique;">Cost = 100 fish</td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="Oran" onClick="run2()">
+      Orange fish upgrade fish production x69
+    </button>
+  </td>
+  <td id="Ora" style="font-style:oblique;">Cost = 1000 fish</td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="multi2" onclick="up3()">
+      Buy multiplier
+    </button>
+  </td>
+  <td>
+    <button id="max2" onclick="maxx2()">
+    Buy Max
+    </button>
+  </td>
+  <td id="newcost" style="font-style:oblique;">Cost = </td>
+  <td id="multi" style="font-style:oblique;"> </td>
+</table>
+<table id="timing" style="font-style:oblique;">
+  <td id="hours">00:</td>
+  <td id="minutes">00:</td>
+  <td id="seconds">00</td>
+</table>
+<h2 id="Win">
+YOU WON!
+</h2>
+<span>
+<button id="reset" onclick="reset()">
+HARD RESET
 </button>
+</span>
+
+<div style="div">
+  Made by:Sioist and Kapparina Alpha V2.07
+</div>
+<div id="remove">
+  <button id="nope" onclick="remove()">
+    remove
+  </button>
+</div>
 <script>
-  document.getElementById("dps")
-    .addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("button").click();
-      }
-    });
-
-  function hp() {
-    var dps = document.getElementById("zone").value;
-    var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
-    var scale3 = [];
-    var scale2 = [];
-    var zone2 = [];
-    var zone = 0;
-    if (zone <= 140) {
-      if (zone % 5 === 0) {
-        var dps1 = 10 * (zone - 1 + Math.pow(1.55, (zone - 1))) * 10
-      } else {
-        var dps1 = 10 * (zone - 1 + Math.pow(1.55, zone - 1))
-      }
-    } else if (zone <= 500) {
-      if (zone % 5 === 0) {
-        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140)) * 10
-      } else {
-        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140))
-      }
-    } else {
-      var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
-      var scale3 = []
-      var scale2 = []
-      var zone2 = []
-      var zone4 = Math.floor(zone / 500) - 1
-      var scale4 = []
-      for (i = 0; i < zone4; i++) {
-        var scale1 = i * 0.005 + 1.15
-        var zone1 = 500
-        scale2.push(scale1)
-        zone2.push(zone1)
-
-      }
-      for (j = 0; j < zone4; j++) {
-        scale3.push(Math.pow(scale2[j], zone2[j]));
-      }
-      /*for (m=0;m<zone4;m++)
-      {
-        scale4.push(scale3[m]*scalea[m]);
-          
-      }*/
-      var hp = scale
-      for (var i = 0; i < scale3.length; i++) {
-        hp *= scale3[i]
-      }
-      var hpR = hp * Math.pow(1.15 + 0.005 * scale3.length, zone - (scale3.length + 1) * 500)
-    }
-    var zonex = hpR.toPrecision(4);
-    if(zonex>dps){
-    for (var i = 0; i > 5000; i++) {
-    var zonel = zone + 1
-      }
-    }
-  }
-  /*if (kumaEffect === 0) {
-      var seconds = (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) * 1.0 / 30;
-    } else {
-      var seconds = (kumaEffect - Math.floor(kumaEffect)) * (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.ceil(kumaEffect)) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.floor(kumaEffect)) + 1 * 1)) * (-kumaEffect + Math.floor(kumaEffect) + 1.0) / 30;
-    }
-    if (seconds >= 3600) {
-      var hours = Math.floor(seconds / 3600)
-      var minutes = Math.floor((seconds - hours * 3600) / 60)
-      var seconds = Math.floor(seconds - hours * 3600 - minutes * 60)
-    } else if (seconds >= 60) {
-      var hours = 0
-      var minutes = Math.floor(seconds / 60)
-      var seconds = Math.floor(seconds - minutes * 60)
-    } else {
-      var hours = 0
-      var minutes = 0
-      seconds = Math.floor(seconds)
-    }*/
-
-
-  document.getElementById("h1").innerHTML = zonel
-  }
-
-</script>
-<h1 id="h1">
-
+  <h1 id="title">
+Orange Fish Clicker
 </h1>
+<table>
+  <td>Fish:</td>
+  <td id="fish">0</td>
+</table>
+<table>
+  <td>Fishermen:</td>
+  <td id="fisherman">0</td>
+  <td style="font-style:oblique;">Cost = </td>
+  <td id="fishercost" style="font-style:oblique;"> </td>
 
-<input id="zone" type="text" placeholder="type it" />
-<button id="button" onclick="hp()">
-  Click to find out
+</table>
+<table style="border-spacing: 10px;">
+  <td>
+    <button id="reset01" onclick="fish2()">
+      Add fish
+    </button>
+  </td>
+  <td>
+    <button id="button" onclick="buy()">
+      Buy fishermen
+    </button>
+  </td>
+  <td>
+    <button id="max" onclick="maxx()">
+    Buy Max
+    </button>
+  </td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="upg" onclick="up()">
+      Upgrade fish production x2
+    </button>
+  </td>
+  <td id="up" style="font-style:oblique;">Cost = 100 fish</td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="Oran" onClick="run2()">
+      Orange fish upgrade fish production x69
+    </button>
+  </td>
+  <td id="Ora" style="font-style:oblique;">Cost = 1000 fish</td>
+</table>
+<table style="border-spacing: 5px;">
+  <td>
+    <button id="multi2" onclick="up3()">
+      Buy multiplier
+    </button>
+  </td>
+  <td>
+    <button id="max2" onclick="maxx2()">
+    Buy Max
+    </button>
+  </td>
+  <td id="newcost" style="font-style:oblique;">Cost = </td>
+  <td id="multi" style="font-style:oblique;"> </td>
+</table>
+<table id="timing" style="font-style:oblique;">
+  <td id="hours">00:</td>
+  <td id="minutes">00:</td>
+  <td id="seconds">00</td>
+</table>
+<h2 id="Win">
+YOU WON!
+</h2>
+<span>
+<button id="reset" onclick="reset()">
+HARD RESET
 </button>
-<script>
-  document.getElementById("dps")
-    .addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("button").click();
-      }
-    });
+</span>
 
-  function hp() {
-    var dps = document.getElementById("zone").value;
-    var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
-    var scale3 = [];
-    var scale2 = [];
-    var zone2 = [];
-    var zone = 0;
-    if (zone <= 140) {
-      if (zone % 5 === 0) {
-        var dps1 = 10 * (zone - 1 + Math.pow(1.55, (zone - 1))) * 10
-      } else {
-        var dps1 = 10 * (zone - 1 + Math.pow(1.55, zone - 1))
-      }
-    } else if (zone <= 500) {
-      if (zone % 5 === 0) {
-        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140)) * 10
-      } else {
-        var dps1 = 1390 + 10 * Math.pow(1.55, 139) * Math.pow(1.145, (zone - 140))
-      }
-    } else {
-      var scale = 10 * Math.pow(1.55, 139) * Math.pow(1.145, 360)
-      var scale3 = []
-      var scale2 = []
-      var zone2 = []
-      var zone4 = Math.floor(zone / 500) - 1
-      var scale4 = []
-      for (i = 0; i < zone4; i++) {
-        var scale1 = i * 0.005 + 1.15
-        var zone1 = 500
-        scale2.push(scale1)
-        zone2.push(zone1)
-
-      }
-      for (j = 0; j < zone4; j++) {
-        scale3.push(Math.pow(scale2[j], zone2[j]));
-      }
-      /*for (m=0;m<zone4;m++)
-      {
-        scale4.push(scale3[m]*scalea[m]);
-          
-      }*/
-      var hp = scale
-      for (var i = 0; i < scale3.length; i++) {
-        hp *= scale3[i]
-      }
-      var hpR = hp * Math.pow(1.15 + 0.005 * scale3.length, zone - (scale3.length + 1) * 500)
-    }
-    var zonex = hpR.toPrecision(4);
-    if(zonex>dps){
-    for (var i = 0; i > 5000; i++) {
-    var zonel = zone + 1
-      }
-    }
-  }
-  /*if (kumaEffect === 0) {
-      var seconds = (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10) + 1 * 1)) * 1.0 / 30;
-    } else {
-      var seconds = (kumaEffect - Math.floor(kumaEffect)) * (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.ceil(kumaEffect)) + 1 * 1)) / 30 + (1 * Math.floor(zones / 5) + (zones - Math.floor(zones / 5)) * (15 * (-1 + 10 - Math.floor(kumaEffect)) + 1 * 1)) * (-kumaEffect + Math.floor(kumaEffect) + 1.0) / 30;
-    }
-    if (seconds >= 3600) {
-      var hours = Math.floor(seconds / 3600)
-      var minutes = Math.floor((seconds - hours * 3600) / 60)
-      var seconds = Math.floor(seconds - hours * 3600 - minutes * 60)
-    } else if (seconds >= 60) {
-      var hours = 0
-      var minutes = Math.floor(seconds / 60)
-      var seconds = Math.floor(seconds - minutes * 60)
-    } else {
-      var hours = 0
-      var minutes = 0
-      seconds = Math.floor(seconds)
-    }*/
-
-
-  document.getElementById("h1").innerHTML = zonel
-  }
-
-</script>
+<div style="div">
+  Made by:Sioist and Kapparina Alpha V2.07
+</div>
+<div id="remove">
+  <button id="nope" onclick="remove()">
+    remove
+  </button>
+</div>
+</body>
+</hmtl>
