@@ -1,4 +1,4 @@
-src="https://rawgit.com/MikeMcl/decimal.js/master/decimal.js"
+/*src="https://rawgit.com/MikeMcl/decimal.js/master/decimal.js"
 document.getElementById("reset01")
     .addEventListener("keypress", function(event) {
       event.preventDefault();
@@ -37,7 +37,7 @@ document.getElementById("reset01")
   function getBaseLog(x, y) {
   return Math.log(y) / Math.log(x);
   }*/
-  function maxx(){
+  /*function maxx(){
   while (fish.greaterThan(cost)){
   fish=fish.minus(cost)
   fisherman=fisherman.plus(1)
@@ -118,7 +118,9 @@ document.getElementById("reset01")
       seconds = seconds.times(0)
     }
  var big =new Decimal((fisherman.times(upgrade).times(Orange).times(0.01)).pow(multx));
-fish=fish.plus(big);
+//fish=fish.plus(big);
+ var fish = 10
+ fish=fish+1
 
 
 
