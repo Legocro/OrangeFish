@@ -19,7 +19,7 @@ document.getElementById("reset01")
         document.getElementById("nope").click();
       }
     });
-  var fish = 0;
+  var fish =new Decimal(0);
   var fisherman =new Decimal( 0);
   var cost =new Decimal(10);
   var upgrade = new Decimal(1);
@@ -55,7 +55,7 @@ document.getElementById("reset01")
   }
 
   function fish2() {
-    fish=fish+1;
+    fish=fish.plus(1);
 
   }
 
@@ -117,7 +117,7 @@ document.getElementById("reset01")
       seconds = seconds.times(0)
     }
  var big =new Decimal((fisherman.times(upgrade).times(Orange).times(0.01)).pow(multx));
-//fish=fish.plus(big);
+fish=fish.plus(big);
 
 
 
