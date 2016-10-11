@@ -1,4 +1,4 @@
-/*src="https://rawgit.com/MikeMcl/decimal.js/master/decimal.js"
+//src="https://rawgit.com/MikeMcl/decimal.js/master/decimal.js"
 document.getElementById("reset01")
     .addEventListener("keypress", function(event) {
       event.preventDefault();
@@ -37,7 +37,7 @@ document.getElementById("reset01")
   function getBaseLog(x, y) {
   return Math.log(y) / Math.log(x);
   }*/
-  /*function maxx(){
+  function maxx(){
   while (fish.greaterThan(cost)){
   fish=fish.minus(cost)
   fisherman=fisherman.plus(1)
@@ -119,8 +119,8 @@ document.getElementById("reset01")
     }
  var big =new Decimal((fisherman.times(upgrade).times(Orange).times(0.01)).pow(multx));
 //fish=fish.plus(big);
- var fish = 10
- fish=fish+1
+ //var fish = 10
+ //fish=fish+1
 
 
 
@@ -132,7 +132,7 @@ document.getElementById("reset01")
     document.getElementById("fisherman").innerHTML = fisherman;
     document.getElementById("fishercost").innerHTML = (cost.floor()).toPrecision(4);
     document.getElementById("multi").innerHTML = cost2.toPrecision(4) + " fish"
-    /*if (fish.lessThan(cost)) {
+    if (fish.lessThan(cost)) {
       document.getElementById("button").disabled = true;
     } else {
       document.getElementById("button").disabled = false;
@@ -179,7 +179,7 @@ document.getElementById("reset01")
 
     } else {
       document.getElementById("Win").style.visibility = "hidden"
-    }*/
+    }
 
 
 
