@@ -39,16 +39,16 @@ document.getElementById("reset01")
   }*/
   function maxx(){
   while (fish.greaterThan(cost)){
-  fish=fish.minus(cost)
+  fish=fish.minus(cost);
   fisherman=fisherman.plus(1)
-  cost=cost.times(1.3)
+  cost=cost.times(1.3);
   }
   }
   function maxx2(){
   while (fish.greaterThan(cost2)){
-  fish=fish.minus(cost2)
-  multx=multx.plus(1.05)
-  cost2=cost2.times(1000)
+  fish=fish.minus(cost2);
+  multx=multx.plus(1.05);
+  cost2=cost2.times(1000);
   }
   }
   function remove() {
@@ -111,11 +111,11 @@ document.getElementById("reset01")
   var timer = window.setInterval(function() {
   seconds=seconds.plus(1);
     if (minutes.greaterThan(59)) {
-      hours=hours.plus(1)
-      minutes = minutes.times(0)
+      hours=hours.plus(1);
+      minutes = minutes.times(0);
     } else if (seconds.greaterThan(99)) {
-      minutes=minutes.plus(1)
-      seconds = seconds.times(0)
+      minutes=minutes.plus(1);
+      seconds = seconds.times(0);
     }
  var big =new Decimal((fisherman.times(upgrade).times(Orange).times(0.01)).pow(multx));
 //fish=fish.plus(big);
@@ -139,28 +139,28 @@ document.getElementById("reset01")
     }
     if (upgrade.equals(1)) {
       if (fish.lessThan(100)) {
-        document.getElementById("up").style.visibility = "hidden"
+        document.getElementById("up").style.visibility = "hidden";
         document.getElementById("upg").disabled = true;
       } else {
-        document.getElementById("up").style.visibility = "visible"
+        document.getElementById("up").style.visibility = "visible";
         document.getElementById("upg").disabled = false;
 
 
       }
     } else {
-      document.getElementById("up").style.visibility = "hidden"
+      document.getElementById("up").style.visibility = "hidden";
       document.getElementById("upg").disabled = true;
     }
     if (Orange.equals(1)) {
       if (fish.lessThan(1000)) {
-        document.getElementById("Ora").style.visibility = "hidden"
-				document.getElementById("Oran").disabled = true;  
+        document.getElementById("Ora").style.visibility = "hidden";
+	document.getElementById("Oran").disabled = true;  
         } else {
-        document.getElementById("Ora").style.visibility = "visible"
+        document.getElementById("Ora").style.visibility = "visible";
         document.getElementById("Oran").disabled = false;
       }
     } else {
-      document.getElementById("Ora").style.visibility = "hidden"
+      document.getElementById("Ora").style.visibility = "hidden";
       document.getElementById("Oran").disabled = true;
 
     }
@@ -171,14 +171,14 @@ document.getElementById("reset01")
     }
 
     if (fish.greaterThan(1e308)) {
-      document.getElementById("Win").style.visibility = "visible"
+      document.getElementById("Win").style.visibility = "visible";
      /* clearInterval(timer)
       clearInterval(timing01)
       clearInterval(timing001)*/
 
 
     } else {
-      document.getElementById("Win").style.visibility = "hidden"
+      document.getElementById("Win").style.visibility = "hidden";
     }
 
 
